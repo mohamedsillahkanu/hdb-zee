@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Happy Birthday Zee · love</title>
+  <!-- Google Font for stylish typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <style>
+    /* reset & base – white background */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* mobile app card – white body, black border */
+    .app-container {
+      max-width: 400px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 36px;
+      border: 3px solid #000000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 580px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ----- HEADER : RED theme, 2x height of footer ----- */
+    .app-header {
+      background-color: #e63946;  /* vibrant red */
+      padding: 28px 20px 26px 20px;
+      border-bottom: 2px solid #b3002d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+      text-align: center;
+    }
+
+    /* STYLISH TITLE: white text with red accent */
+    .header-title {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+      color: #ffffff;  /* white text on red */
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      position: relative;
+      display: inline-block;
+      padding: 0 4px;
+      line-height: 1.2;
+      background: none; /* remove gradient, solid white */
+      -webkit-text-fill-color: #ffffff;
+      background-clip: unset;
+    }
+
+    /* subtle decorative underline in gold/white */
+    .header-title::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 15%;
+      width: 70%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ffd700, transparent);
+      border-radius: 4px;
+      opacity: 0.6;
+    }
+
+    /* decorative sparkle -> now golden */
+    .header-title .sparkle {
+      display: inline-block;
+      font-family: system-ui, sans-serif;
+      font-weight: 300;
+      color: #ffd700;
+      -webkit-text-fill-color: #ffd700;
+      background: none;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+      margin: 0 2px;
+    }
+
+    /* ----- MAIN BODY : image from GitHub link ----- */
+    .app-body {
+      flex: 1;
+      background-color: #ffffff;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+    }
+
+    .fashion-image {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 2px solid #e63946; /* red border to tie theme */
+    }
+
+    /* ----- FOOTER : RED theme, half header height ----- */
+    .app-footer {
+      background-color: #e63946;  /* vibrant red */
+      padding: 14px 20px 14px 20px;
+      border-top: 2px solid #b3002d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 40px;
+    }
+
+    .footer-text {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 0.8px;
+      color: #ffffff;  /* white text */
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 28px;
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* love emojis in footer */
+    .footer-text .love-emoji {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* love emojis in header (added via spans) */
+    .header-love {
+      display: inline-block;
+      font-size: 1.2rem;
+      margin: 0 4px;
+      color: #ffd700;
+      -webkit-text-fill-color: #ffd700;
+    }
+
+    /* small responsiveness */
+    @media (max-width: 440px) {
+      .app-container {
+        border-radius: 28px;
+      }
+      .header-title {
+        font-size: 1.5rem;
+      }
+      .app-header {
+        padding: 22px 16px 20px 16px;
+        min-height: 70px;
+      }
+      .app-footer {
+        padding: 12px 16px 12px 16px;
+        min-height: 36px;
+      }
+      .footer-text {
+        font-size: 1rem;
+        padding: 3px 20px;
+      }
+      .app-body {
+        padding: 8px;
+      }
+      .fashion-image {
+        border-radius: 16px;
+        max-height: 400px;
+      }
+      .header-love {
+        font-size: 1rem;
+      }
+    }
+
+    /* ensure header and footer are exactly red */
+    .app-header, .app-footer {
+      background-color: #e63946 !important;
+    }
+
+    .app-body {
+      background-color: #ffffff !important;
+    }
+
+    .app-container {
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- HEADER: "Happy Birthday Zee (Chief Wife)" with love emojis -->
+    <header class="app-header">
+      <div class="header-title">
+        <span class="sparkle">✦</span> 
+        <span class="header-love">❤️</span>
+        Happy Birthday Zee <br>(Chief Wife)
+        <span class="header-love">❤️</span>
+        <span class="sparkle">✦</span>
+      </div>
+    </header>
+
+    <!-- BODY: image from the GitHub link -->
+    <main class="app-body">
+      <img 
+        class="fashion-image" 
+        src="https://github.com/Informatics-Consultancy-Firm/MOCM_updated/blob/d5bc2d85bbe9db035a0259fb4293c3587b7cfcd2/IMG-20260625-WA0003.jpg?raw=true" 
+        alt="Birthday celebration image" 
+        loading="lazy"
+      >
+    </main>
+
+    <!-- FOOTER: "HBD Zee @2026" with love emojis -->
+    <footer class="app-footer">
+      <div class="footer-text">
+        <span class="love-emoji">❤️</span>
+        HBD Zee @2026
+        <span class="love-emoji">❤️</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
